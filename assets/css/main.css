@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: poppins, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.data-input {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding: 2em 3em;
+    background: #fff;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    margin-bottom: 2em;
+}
+
+input {
+    width: 100%;
+    padding: .8em 2em;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    border: none;
+    background: rgb(242, 242, 242);
+    transition: all .5s ease;
+}
+
+
+button {
+    padding: .5em 3em;
+    border: none;
+    border-radius: 10px;
+    background: #232323;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: all .5s ease;
+}
+
+.title {
+    background: #232323;
+}
+
+.title td {
+    color: #fff;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+
+.strike {
+    text-decoration: line-through;
+    color: green;
+}
+
+td {
+    border: none;
+    padding: .5em 1em;
+    text-align: center;
+    height: 50px;
+    margin: auto;
+}
+
+span {
+    cursor: pointer;
+}
+
+.material-icons {
+    align-items: center;
+}
+
+.task {
+    text-align: start;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+    margin: auto;
+}
+
+button:disabled {
+    background: #b2b2b2;
+}

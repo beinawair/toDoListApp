@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>To-do List App</title>
+
+    <!-- style css -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="data-input">
+      <input type="text" id="input1" placeholder="Enter new to do" onkeyup="dataValidation()">
+      <input id="input2" placeholder="Enter category" onkeyup="dataValidation()" list="optList">
+      <datalist id="optList">
+        <option value="Personal"></option>
+        <option value="Work"></option>
+      </datalist>
+      <button id="addBtn" disabled>Add</button>
+      <ul></ul>
+    </div>
+    <div class="table-container">
+      <table id="todo-table">
+        <tr class="title">
+          <td>CHECK</td>
+          <td>TO-DO</td>
+          <td>CATEGORY</td>
+          <td>DELETE</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+    
+    <!-- javascript -->
+    <script>
+      function dataValidation() {
+        if(input1.value != "" && input2.value != "") {
+            addBtn.disabled = false;
+        }
+        else {
+            addBtn.disabled = true;
+        }
+    }
+    </script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
