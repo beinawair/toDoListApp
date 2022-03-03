@@ -1,6 +1,8 @@
+//main function
 todoMain();
 
 function todoMain() {
+//variables declaration
 let inputElem,
     inputElem2,
     button,
@@ -9,6 +11,7 @@ let inputElem,
     getElements();
     addListeners();
 
+    //selecting html id and tag
     function getElements() {
         inputElem = document.getElementById('input1');
         inputElem2 = document.getElementById('input2');
@@ -16,43 +19,18 @@ let inputElem,
         button = document.getElementById('addBtn');
     }
 
+    //click function
     function addListeners() {
-        // button.addEventListener('click', onChange, false);
         button.addEventListener('click', addEntry, false);
     }
 
-    //function onChange (event)
+    //add new task function
     function addEntry() {
-        // let flag = true;
-        
+        //collecting input value
         let inputValue = inputElem.value;
         inputElem.value = '';
         let inputValue2 = inputElem2.value;
         inputElem2.value = '';
-
-                    // ulElem.innerHTML += `<li>${inputValue}</li>`;
-        // let liElem = document.createElement('li');
-
-        // let checkboxElem = document.createElement('input');
-        // checkboxElem.type = 'checkbox';
-        // liElem.appendChild(checkboxElem);
-        // let textElem = document.createElement('span');
-        // textElem.innerText = inputValue + " - " + inputValue2;
-        // liElem.appendChild(textElem);
-
-
-        //             // liElem.innerText = inputValue;
-        //             // liElem.addEventListener('click', onClick, false);
-
-        // let spanElem = document.createElement('span');
-        // spanElem.innerText = 'delete';
-        // spanElem.className = 'material-icons';
-
-        // spanElem.addEventListener('click', deleteItem, false);
-
-        // liElem.appendChild(spanElem);
-        // ulElem.appendChild(liElem);
-
 
         //add new row
         let table = document.getElementById('todo-table')
@@ -92,15 +70,6 @@ let inputElem,
         }
 
         function done() {
-            // if(flag) {
-            //     // this.style.textDecoration = 'line-through';
-            //     this.classList.add('strike');
-            //     flag = !flag;
-            // } else {
-            //     // this.style.textDecoration = 'none';
-            //     this.classList.remove('strike');
-            //     flag = !flag;
-            // }
 
             trEl.classList.toggle('strike')
         }
