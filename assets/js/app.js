@@ -22,7 +22,10 @@ let inputElem,
 
     //click function
     function addListeners() {
+        //buton add
         button.addEventListener('click', addEntry, false);
+        //button filter
+        filterEl.addEventListener('change', filterEntry, false);
     }
 
     //add new task function
@@ -67,12 +70,44 @@ let inputElem,
          trEl.appendChild(tdEl04);
 
         function deleteItem() {
+            //remove row
             trEl.remove();
         }
 
         function done() {
-
+            //toggle the checkbox styling
             trEl.classList.toggle('strike')
         }
+    }
+
+    function filterEntry() {
+        //selecting row
+        let rows = document.getElementsByTagName('tr');
+        //select filter value
+        let select = filterEl.value;
+
+        if(select == 'All') {
+            Array.from(rows).forEach((row, index) => {
+                    row.style.display = '';    
+            });
+        } else {
+
+            Array.from(rows).forEach((row, index) => {
+                if(index == 0){
+                    return;
+                }
+    
+                //select value from 'td' element
+                let category = row.getElementsByTagName('td')[2].innerText;
+                //hide and show per category
+                if(category == filterEl.value) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+    
+            });
+        }
+
     }
 }
