@@ -71,13 +71,13 @@ let inputElem,
          tdEl04.appendChild(spanEl);
          trEl.appendChild(tdEl04);
 
-         updateSelectOpt();
+         updateFilterOpt();
 
         function deleteItem() {
             //remove row
             trEl.remove();
             //delete category
-            updateSelectOpt();
+            updateFilterOpt();
         }
 
         function done() {
@@ -94,7 +94,7 @@ let inputElem,
 
         if(select == DEFAULT_OPTION) {
             //show all tasks
-            Array.from(rows).forEach((row, index) => {
+            Array.from(rows).forEach((row) => {
                     row.style.display = '';    
             });
         } else {
@@ -117,7 +117,7 @@ let inputElem,
 
     }
 
-    function updateSelectOpt() {
+    function updateFilterOpt() {
         let opts = [];
         let rows = document.getElementsByTagName('tr');
 
