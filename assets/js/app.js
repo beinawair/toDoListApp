@@ -8,6 +8,7 @@ let inputElem,
     button,
     filterEl;
 
+    //run function
     getElements();
     addListeners();
 
