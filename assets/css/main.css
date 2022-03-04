@@ -37,6 +37,15 @@ input {
     transition: all .5s ease;
 }
 
+select {
+    width: 100%;
+    padding: .8em 2em;
+    margin-bottom: 1.5em;
+    border-radius: 10px;
+    border: none;
+    background: rgb(242, 242, 242);
+    transition: all .5s ease;
+}
 
 button {
     padding: .5em 3em;
@@ -50,10 +59,17 @@ button {
 
 .table-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     transition: all .5s ease;
+}
+
+.categoryFilter {
+    display: flex;
+    justify-content: flex-start;
+    width: 150px;
 }
 
 .title {

@@ -6,7 +6,7 @@ function todoMain() {
 let inputElem,
     inputElem2,
     button,
-    ulElem;
+    filterEl;
 
     getElements();
     addListeners();
@@ -15,7 +15,7 @@ let inputElem,
     function getElements() {
         inputElem = document.getElementById('input1');
         inputElem2 = document.getElementById('input2');
-        ulElem = document.getElementsByTagName('ul')[0];
+        filterEl = document.getElementById('categoryFilter');
         button = document.getElementById('addBtn');
     }
 
