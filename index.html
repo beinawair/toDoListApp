@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
+  <!-- input tasks -->
   <div class="container">
     <div class="data-input">
       <input type="text" id="input1" placeholder="Enter new to do" onkeyup="dataValidation()">
@@ -23,7 +24,13 @@
       <button id="addBtn" disabled>Add</button>
       <ul></ul>
     </div>
+    <!-- task list -->
     <div class="table-container">
+      <select class="categoryFilter" id="categoryFilter">
+        <option disabled selected>-- filter --</option>
+        <option value="personal">Personal</option>
+        <option value="work">Work</option>
+      </select>
       <table id="todo-table">
         <tr class="title">
           <td>CHECK</td>
