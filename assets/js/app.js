@@ -2,6 +2,8 @@
 todoMain();
 
 function todoMain() {
+    const DEFAULT_OPTION = 'All';
+
 //variables declaration
 let inputElem,
     inputElem2,
@@ -69,9 +71,13 @@ let inputElem,
          tdEl04.appendChild(spanEl);
          trEl.appendChild(tdEl04);
 
+         updateSelectOpt();
+
         function deleteItem() {
             //remove row
             trEl.remove();
+            //delete category
+            updateSelectOpt();
         }
 
         function done() {
@@ -86,7 +92,7 @@ let inputElem,
         //select filter value
         let select = filterEl.value;
 
-        if(select == 'All') {
+        if(select == DEFAULT_OPTION) {
             //show all tasks
             Array.from(rows).forEach((row, index) => {
                     row.style.display = '';    
@@ -106,9 +112,40 @@ let inputElem,
                 } else {
                     row.style.display = 'none';
                 }
-    
             });
         }
 
+    }
+
+    function updateSelectOpt() {
+        let opts = [];
+        let rows = document.getElementsByTagName('tr');
+
+        //show tasks based on category filter
+        Array.from(rows).forEach((row, index) => {
+            if(index == 0){
+                return;
+            }
+
+            //select value from 'td' element
+            let category = row.getElementsByTagName('td')[2].innerText;
+            opts.push(category);
+            
+        });
+
+        let optionSet = new Set(opts);
+        //empty the selection
+        filterEl.innerHTML = '';
+        let newOptEl = document.createElement('option');
+             newOptEl.value = DEFAULT_OPTION;
+             newOptEl.innerText = DEFAULT_OPTION;
+             filterEl.appendChild(newOptEl);
+
+        for(let opt of optionSet) {
+            let newOptEl = document.createElement('option');
+             newOptEl.value = opt;
+             newOptEl.innerText = opt;
+             filterEl.appendChild(newOptEl);
+        }
     }
 }
