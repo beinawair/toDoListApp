@@ -87,11 +87,12 @@ let inputElem,
         let select = filterEl.value;
 
         if(select == 'All') {
+            //show all tasks
             Array.from(rows).forEach((row, index) => {
                     row.style.display = '';    
             });
         } else {
-
+            //show tasks based on category filter
             Array.from(rows).forEach((row, index) => {
                 if(index == 0){
                     return;
